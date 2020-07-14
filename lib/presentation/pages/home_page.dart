@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _pageController = PageController(
-    viewportFraction: 0.3,
+    viewportFraction: 0.5,
   );
   final CardAngles geometry = CardAngles();
 
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         }
         return RotateX(child: child, angle: angle);
       },
-      child: Card(),
+      child: Card(index),
     );
   }
 }
