@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../domain/services/card_angles.dart';
-import '../Widgets/card.dart';
+import '../Widgets/poro_card.dart';
 import '../Widgets/rotate_x.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,13 +35,16 @@ class _HomePageState extends State<HomePage> {
       builder: (context, child) {
         double angle;
         if (_pageController.position.haveDimensions) {
-          angle = geometry.calculatePageAngle(_pageController.page, index);
+          angle = geometry.calculatePageAngle(
+            index,
+            _pageController.page,
+          );
         } else {
-          angle = geometry.getInitialAngles(index);
+          angle = geometry.calculatePageAngle(index);
         }
         return RotateX(child: child, angle: angle);
       },
-      child: Card(index),
+      child: PoroCard(index),
     );
   }
 }
