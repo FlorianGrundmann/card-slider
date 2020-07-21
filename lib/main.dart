@@ -1,7 +1,6 @@
+import 'package:card_slider/presentation/pages/ring_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'presentation/pages/home_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +10,8 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: RingPage(),
+      //home: HomePage(),
     );
   }
 }
